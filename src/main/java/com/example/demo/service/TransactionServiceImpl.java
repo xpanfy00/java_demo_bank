@@ -25,15 +25,15 @@ public class TransactionServiceImpl implements TransactionService {
         BankAccount account = bankAccountRepository.findById(accountId)
                 .orElseThrow(() -> new IllegalArgumentException("Bank account not found"));
 
-        // Добавляем транзакцию (предположим, что логика сохранения транзакции реализована)
+
         account.setBalance(account.getBalance().add(request.getAmount()));
 
-        // Если баланс ниже 200, выбрасываем исключение
+
         if (account.getBalance().compareTo(BigDecimal.valueOf(200)) < 0) {
             throw new InternalTransactionException("Balance below 200");
         }
 
-        // Сохраняем обновлённый счёт
+
         bankAccountRepository.save(account);
     }
 
