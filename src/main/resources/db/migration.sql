@@ -1,3 +1,14 @@
+create table bank_accounts
+(
+    id             bigint         not null,
+    prefix         varchar(128)   not null,
+    suffix         varchar(128)   not null,
+    apply_for_loan boolean        not null default false, -- Добавленный столбец
+    balance        numeric(18, 2) not null,
+    subject        bigint,
+    primary key (id),
+    foreign key (subject) references subjects (id)
+);
 create table subjects
 (
     id        bigint not null,

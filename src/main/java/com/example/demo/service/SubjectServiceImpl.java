@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.api.CreateSubjectRequest;
 import com.example.demo.api.SubjectResponse;
-import com.example.demo.client.PrefixClient;
+
 import com.example.demo.domain.Subject;
 import com.example.demo.mapper.SubjectMapper;
 import com.example.demo.repository.BankAccountRepository;
@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,7 +23,6 @@ public class SubjectServiceImpl implements SubjectService {
   private final SubjectMapper subjectMapper;
   private final SubjectRepository subjectRepository;
   private final BankAccountRepository bankAccountRepository;
-  private final PrefixClient prefixClient;
   private BankAccountService bankAccountService;
 
   @Override

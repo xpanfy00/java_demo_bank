@@ -42,7 +42,7 @@ public class BankResource {
   }
 
 
-  @PostMapping("/{id}/transaction")
+  @PostMapping("/{id}/apply-loan")
   public ResponseEntity<Void> applyForLoan(@PathVariable Long id) {
     bankAccountService.applyForLoan(id);
     return ResponseEntity.accepted().build();

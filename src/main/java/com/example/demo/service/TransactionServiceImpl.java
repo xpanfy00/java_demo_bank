@@ -27,6 +27,7 @@ public class TransactionServiceImpl implements TransactionService {
 
 
         account.setBalance(account.getBalance().add(request.getAmount()));
+        bankAccountRepository.save(account);
 
 
         if (account.getBalance().compareTo(BigDecimal.valueOf(200)) < 0) {
